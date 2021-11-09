@@ -1,0 +1,26 @@
+drop table customer;
+drop sequence seqCustomer;
+alter
+select * from information_schema.table_constraints where table_name = '';
+DROP TABLE customer CASCADE CONSTRAINTS;
+
+create table customer(
+	customerid number primary key, 
+	id varchar2(50), 
+	name varchar2(50), 
+	password varchar2(50), 
+	postcode varchar2(50),
+	address varchar2(100), 
+	address2 varchar2(500), 
+	phone varchar2(100), 
+	email varchar2(100)
+);
+create sequence seqCustomer;
+
+select * from customer;
+
+insert into customer 
+values(seqCustomer.nextval,'ertace','seung','password','16415','수원','권선구','010-1111-1111','ertace159@naver.com');
+
+insert into customer 
+values(seqCustomer.nextval,'abc','hyeok','1234','14215','서울','강남','010-2222-2222','abc@naver.com');
